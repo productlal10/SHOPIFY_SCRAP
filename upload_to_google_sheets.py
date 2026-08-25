@@ -30,7 +30,7 @@ def get_gspread_client(credentials_path: str = None):
 
     # 2. Environment variable JSON string (GitHub Actions Secret)
     env_json = os.environ.get("GOOGLE_CREDENTIALS_JSON")
-    if env_json:
+    if env_json and env_json.strip():
         try:
             creds_dict = json.loads(env_json)
             creds = Credentials.from_service_account_info(creds_dict, scopes=SCOPES)
@@ -49,9 +49,13 @@ def get_gspread_client(credentials_path: str = None):
         if path and os.path.exists(path):
             return gspread.service_account(filename=path)
 
-    raise FileNotFoundError(
-        "Service account credentials not found. Set GOOGLE_CREDENTIALS_JSON or provide valid json path."
-    )
+    print("\n" + "!"*70)
+    print(" [!] MISSING GITHUB SECRET: 'GCP_SA_KEY'")
+    print(" [!] Google Service Account JSON credentials were not found.")
+    print(" [!] Please add repository secret 'GCP_SA_KEY' in GitHub Settings:")
+    print("     https://github.com/productlal10/SHOPIFY_SCRAP/settings/secrets/actions")
+    print("!"*70 + "\n", flush=True)
+    return None
 
 def upload_csv_to_sheet(sheet_identifier: str, csv_path: str, tab_name: str = "Daily_Inventory", credentials_path: str = None):
     """
@@ -63,6 +67,9 @@ def upload_csv_to_sheet(sheet_identifier: str, csv_path: str, tab_name: str = "D
         return False
         
     client = get_gspread_client(credentials_path)
+    if not client:
+        print(f"[!] Skipping Google Sheets upload for '{tab_name}' because GCP_SA_KEY secret is not set.")
+        return False
     
     # Open spreadsheet
     if "docs.google.com/spreadsheets" in sheet_identifier:
