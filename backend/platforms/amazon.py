@@ -11,23 +11,23 @@ import json
 import urllib.parse
 from typing import Dict, Any, List
 from bs4 import BeautifulSoup
+import requests
 
 from backend.core.scraper_base import BaseScraper
-from backend.core.http_client import get_http_session
 from backend.core.normalizer import normalize_product_data
 
 AMAZON_HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/122.0.0.0 Safari/537.36"
-    ),
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-    "Accept-Language": "en-US,en;q=0.9",
-    "device-memory": "8",
-    "sec-ch-ua": '"Chromium";v="122", "Not(A:Brand";v="24", "Google Chrome";v="122"',
+    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "accept-language": "en-US,en;q=0.9",
+    "sec-ch-ua": '"Not A(Brand";v="8", "Chromium";v="132", "Google Chrome";v="132"',
     "sec-ch-ua-mobile": "?0",
     "sec-ch-ua-platform": '"macOS"',
+    "sec-fetch-dest": "document",
+    "sec-fetch-mode": "navigate",
+    "sec-fetch-site": "none",
+    "sec-fetch-user": "?1",
+    "upgrade-insecure-requests": "1",
+    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
 }
 
 class AmazonScraper(BaseScraper):
@@ -59,14 +59,24 @@ class AmazonScraper(BaseScraper):
         asin = self.extract_asin(url)
         data["asin"] = asin
         data["product_id"] = asin or url
-        session = get_http_session()
+        
+        session = requests.Session()
 
         try:
-            r = session.get(url, headers=AMAZON_HEADERS, timeout=15)
+            # 1. Obtain session cookies from Amazon India home
+            session.get("https://www.amazon.in", headers=AMAZON_HEADERS, timeout=8)
+
+            # 2. Fetch product page
+            r = session.get(url, headers=AMAZON_HEADERS, timeout=12)
             if r.status_code != 200:
                 return normalize_product_data(data)
 
             html = r.text
+            if "captcha" in html.lower():
+                data["stock_status"] = "UNKNOWN"
+                data["stock_source"] = "not_publicly_available"
+                return normalize_product_data(data)
+
             soup = BeautifulSoup(html, "html.parser")
 
             # Extract Title
@@ -149,7 +159,6 @@ class AmazonScraper(BaseScraper):
                 data["available"] = True
                 data["stock_status"] = "IN_STOCK"
                 
-                # Check if exact limited stock quantity is publicly displayed (e.g. "Only 2 left in stock")
                 m_stock = re.search(r'only\s+(\d+)\s+left\s+in\s+stock', avail_text)
                 if m_stock:
                     data["exact_stock"] = int(m_stock.group(1))
