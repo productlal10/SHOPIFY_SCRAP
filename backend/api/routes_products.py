@@ -92,6 +92,51 @@ def bulk_scrape_products(payload: BulkScrapeRequest, db: Session = Depends(get_d
 
     return {"status": "completed", "total": len(payload.urls), "results": results}
 
+def product_to_dict(p: Product) -> dict:
+    """Serialize Product ORM model into dictionary including variants."""
+    return {
+        "id": p.id,
+        "platform": p.platform,
+        "product_id": p.product_id,
+        "asin": p.asin,
+        "sku": p.sku,
+        "style_code": p.style_code,
+        "product_name": p.product_name,
+        "brand": p.brand,
+        "category": p.category,
+        "description": p.description,
+        "product_url": p.product_url,
+        "images": p.images or [],
+        "seller": p.seller,
+        "vendor": p.vendor,
+        "mrp": float(p.mrp) if p.mrp else None,
+        "selling_price": float(p.selling_price) if p.selling_price else None,
+        "discount_percent": float(p.discount_percent) if p.discount_percent else 0.0,
+        "currency": p.currency,
+        "available": p.available,
+        "stock_status": p.stock_status,
+        "exact_stock": p.exact_stock,
+        "stock_source": p.stock_source,
+        "first_seen_at": p.first_seen_at.isoformat() if p.first_seen_at else "",
+        "last_checked_at": p.last_checked_at.isoformat() if p.last_checked_at else "",
+        "variants": [
+            {
+                "id": v.id,
+                "variant_id": v.variant_id,
+                "sku": v.sku,
+                "color": v.color,
+                "size": v.size,
+                "attributes": v.attributes or {},
+                "mrp": float(v.mrp) if v.mrp else None,
+                "selling_price": float(v.selling_price) if v.selling_price else None,
+                "available": v.available,
+                "stock_status": v.stock_status,
+                "exact_stock": v.exact_stock,
+                "stock_source": v.stock_source
+            } for v in (p.variants or [])
+        ]
+    }
+
 @router.get("/products")
 def list_products(
     platform: Optional[str] = None,
@@ -116,7 +161,7 @@ def list_products(
     total = query.count()
     products = query.offset(offset).limit(limit).all()
 
-    return {"total": total, "limit": limit, "offset": offset, "products": products}
+    return {"total": total, "limit": limit, "offset": offset, "products": [product_to_dict(p) for p in products]}
 
 @router.get("/products/{product_id}")
 def get_product_details(product_id: str, db: Session = Depends(get_db)):
@@ -124,7 +169,7 @@ def get_product_details(product_id: str, db: Session = Depends(get_db)):
     product = db.query(Product).filter((Product.id == product_id) | (Product.product_id == product_id)).first()
     if not product:
         raise HTTPException(status_code=404, detail="Product not found")
-    return product
+    return product_to_dict(product)
 
 @router.get("/products/{product_id}/history")
 def get_product_history(product_id: str, db: Session = Depends(get_db)):
