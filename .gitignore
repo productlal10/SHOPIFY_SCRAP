@@ -1,6 +1,7 @@
 # Credentials & Secrets
 *.json
 !daily_snapshots/**/*.json
+!*_exact_inventory.json
 shopifyscrap-*.json
 credentials.json
 
