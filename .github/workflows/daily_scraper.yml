@@ -6,6 +6,9 @@ on:
     - cron: '25 8 * * *'
   workflow_dispatch: # Allows manual trigger anytime from GitHub Actions tab
 
+permissions:
+  contents: write
+
 jobs:
   scrape_and_sync:
     runs-on: ubuntu-latest
