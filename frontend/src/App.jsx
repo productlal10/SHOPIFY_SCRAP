@@ -11,6 +11,7 @@ export default function App() {
   const [availableFilter, setAvailableFilter] = useState('');
   const [scrapeUrlInput, setScrapeUrlInput] = useState('');
   const [scrapingStatus, setScrapingStatus] = useState(null);
+  const [expandedRows, setExpandedRows] = useState({});
 
   const loadData = async () => {
     setLoading(true);
@@ -34,11 +35,15 @@ export default function App() {
     loadData();
   }, [search, platformFilter, availableFilter]);
 
+  const toggleExpand = (id) => {
+    setExpandedRows(prev => ({ ...prev, [id]: !prev[id] }));
+  };
+
   const handleScrape = async () => {
     if (!scrapeUrlInput.trim()) return;
-    setScrapingStatus('Scraping product data across platform...');
+    setScrapingStatus('Scraping product & size variant data across platform...');
     try {
-      const input = scrapeUrlInput.strip ? scrapeUrlInput.strip() : scrapeUrlInput.trim();
+      const input = scrapeUrlInput.trim();
       if (input.includes('\n')) {
         const urls = input.split('\n').map(u => u.trim()).filter(Boolean);
         await bulkScrapeProducts(urls);
@@ -101,7 +106,7 @@ export default function App() {
           <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
             <input
               type="text"
-              placeholder="Paste Product URL to Scrape (e.g. Shopify, Myntra, Flipkart, Amazon India)..."
+              placeholder="Paste Product URL to Scrape (Shopify, Myntra, Flipkart, Amazon India)..."
               className="search-input"
               style={{ flex: 1 }}
               value={scrapeUrlInput}
@@ -165,13 +170,13 @@ export default function App() {
                 <th>Platform</th>
                 <th>Brand</th>
                 <th>Product Name</th>
+                <th>Size Variants Breakdown</th>
                 <th>Selling Price</th>
                 <th>MRP</th>
                 <th>Discount</th>
-                <th>Stock Status</th>
-                <th>Exact Stock</th>
+                <th>Total Stock</th>
                 <th>Stock Source</th>
-                <th>URL</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -186,53 +191,144 @@ export default function App() {
                   </td>
                 </tr>
               ) : (
-                products.map((p) => (
-                  <tr key={p.id || p.product_id}>
-                    <td>
-                      <span className="badge badge-platform">{p.platform}</span>
-                    </td>
-                    <td><strong>{p.brand}</strong></td>
-                    <td style={{ maxWidth: '300px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                      {p.product_name}
-                    </td>
-                    <td><strong>₹{p.selling_price?.toLocaleString() || 'N/A'}</strong></td>
-                    <td style={{ textDecoration: 'line-through', color: 'var(--text-secondary)' }}>
-                      ₹{p.mrp?.toLocaleString() || 'N/A'}
-                    </td>
-                    <td>
-                      {p.discount_percent > 0 ? (
-                        <span style={{ color: 'var(--accent-emerald)', fontWeight: '600' }}>
-                          {p.discount_percent}% OFF
-                        </span>
-                      ) : '-'}
-                    </td>
-                    <td>
-                      <span className={`badge ${p.available ? 'badge-in-stock' : 'badge-out-stock'}`}>
-                        {p.stock_status || (p.available ? 'IN_STOCK' : 'OUT_OF_STOCK')}
-                      </span>
-                    </td>
-                    <td>
-                      {p.exact_stock !== null ? (
-                        <strong style={{ color: 'var(--accent-blue)' }}>{p.exact_stock} units</strong>
-                      ) : (
-                        <span style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>NULL</span>
+                products.map((p) => {
+                  const pid = p.id || p.product_id;
+                  const isExpanded = expandedRows[pid];
+                  const hasVariants = p.variants && p.variants.length > 0;
+
+                  return (
+                    <React.Fragment key={pid}>
+                      <tr>
+                        <td>
+                          <span className="badge badge-platform">{p.platform}</span>
+                        </td>
+                        <td><strong>{p.brand}</strong></td>
+                        <td style={{ maxWidth: '280px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          <a href={p.product_url} target="_blank" rel="noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'none' }}>
+                            {p.product_name} ↗
+                          </a>
+                        </td>
+                        <td>
+                          {hasVariants ? (
+                            <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+                              {p.variants.slice(0, 5).map((v, i) => (
+                                <span
+                                  key={i}
+                                  style={{
+                                    fontSize: '0.75rem',
+                                    padding: '0.15rem 0.4rem',
+                                    borderRadius: '4px',
+                                    background: v.available ? 'rgba(16, 185, 129, 0.15)' : 'rgba(244, 63, 94, 0.15)',
+                                    color: v.available ? 'var(--accent-emerald)' : 'var(--accent-rose)',
+                                    border: '1px solid rgba(255,255,255,0.1)'
+                                  }}
+                                >
+                                  {v.size || 'Default'}: {v.exact_stock !== null ? `${v.exact_stock}u` : (v.available ? 'In Stock' : 'Out')}
+                                </span>
+                              ))}
+                              {p.variants.length > 5 && (
+                                <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                                  +{p.variants.length - 5} more
+                                </span>
+                              )}
+                            </div>
+                          ) : (
+                            <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>No size breakdown</span>
+                          )}
+                        </td>
+                        <td><strong>₹{p.selling_price?.toLocaleString() || 'N/A'}</strong></td>
+                        <td style={{ textDecoration: 'line-through', color: 'var(--text-secondary)' }}>
+                          ₹{p.mrp?.toLocaleString() || 'N/A'}
+                        </td>
+                        <td>
+                          {p.discount_percent > 0 ? (
+                            <span style={{ color: 'var(--accent-emerald)', fontWeight: '600' }}>
+                              {p.discount_percent}% OFF
+                            </span>
+                          ) : '-'}
+                        </td>
+                        <td>
+                          {p.exact_stock !== null ? (
+                            <strong style={{ color: 'var(--accent-blue)' }}>{p.exact_stock} units</strong>
+                          ) : (
+                            <span className={`badge ${p.available ? 'badge-in-stock' : 'badge-out-stock'}`}>
+                              {p.stock_status || (p.available ? 'IN_STOCK' : 'OUT_OF_STOCK')}
+                            </span>
+                          )}
+                        </td>
+                        <td style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                          {p.stock_source || 'not_publicly_available'}
+                        </td>
+                        <td>
+                          {hasVariants && (
+                            <button
+                              className="btn-secondary"
+                              style={{ padding: '0.25rem 0.5rem', fontSize: '0.75rem' }}
+                              onClick={() => toggleExpand(pid)}
+                            >
+                              {isExpanded ? 'Hide Sizes ▲' : 'View Sizes ▼'}
+                            </button>
+                          )}
+                        </td>
+                      </tr>
+
+                      {/* Expanded Size Variants Row */}
+                      {isExpanded && hasVariants && (
+                        <tr style={{ background: 'rgba(15, 23, 42, 0.4)' }}>
+                          <td colSpan="10" style={{ padding: '1rem 2rem' }}>
+                            <div style={{ fontSize: '0.85rem', fontWeight: '600', marginBottom: '0.5rem', color: 'var(--accent-blue)' }}>
+                              📐 Size & Color Variant Breakdown for {p.product_name}:
+                            </div>
+                            <table style={{ width: '100%', background: 'rgba(30, 41, 59, 0.5)', borderRadius: '8px' }}>
+                              <thead>
+                                <tr style={{ fontSize: '0.75rem' }}>
+                                  <th>Variant ID</th>
+                                  <th>SKU</th>
+                                  <th>Size</th>
+                                  <th>Color</th>
+                                  <th>Variant Price</th>
+                                  <th>MRP</th>
+                                  <th>Availability</th>
+                                  <th>Exact Stock Left</th>
+                                  <th>Stock Source</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {p.variants.map((v, idx) => (
+                                  <tr key={idx} style={{ fontSize: '0.8rem' }}>
+                                    <td>{v.variant_id}</td>
+                                    <td>{v.sku || '-'}</td>
+                                    <td><strong>{v.size || 'Default'}</strong></td>
+                                    <td>{v.color || '-'}</td>
+                                    <td><strong>₹{v.selling_price?.toLocaleString() || p.selling_price}</strong></td>
+                                    <td style={{ textDecoration: 'line-through', color: 'var(--text-secondary)' }}>
+                                      ₹{v.mrp?.toLocaleString() || p.mrp}
+                                    </td>
+                                    <td>
+                                      <span className={`badge ${v.available ? 'badge-in-stock' : 'badge-out-stock'}`}>
+                                        {v.stock_status || (v.available ? 'IN_STOCK' : 'OUT_OF_STOCK')}
+                                      </span>
+                                    </td>
+                                    <td>
+                                      {v.exact_stock !== null ? (
+                                        <strong style={{ color: 'var(--accent-blue)' }}>{v.exact_stock} units</strong>
+                                      ) : (
+                                        <span style={{ color: 'var(--text-secondary)' }}>NULL</span>
+                                      )}
+                                    </td>
+                                    <td style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                                      {v.stock_source || p.stock_source}
+                                    </td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
                       )}
-                    </td>
-                    <td style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
-                      {p.stock_source || 'not_publicly_available'}
-                    </td>
-                    <td>
-                      <a
-                        href={p.product_url}
-                        target="_blank"
-                        rel="noreferrer"
-                        style={{ color: 'var(--accent-blue)', textDecoration: 'none' }}
-                      >
-                        Link ↗
-                      </a>
-                    </td>
-                  </tr>
-                ))
+                    </React.Fragment>
+                  );
+                })
               )}
             </tbody>
           </table>
