@@ -1,156 +1,84 @@
-# 🛒 Shopify E-Commerce Inventory Scraper & Daily Analytics Engine
-## Comprehensive Technical Architecture & API Documentation
+# 🛒 Universal Shopify Exact Inventory Scraper & Daily Analytics Documentation
+
+## 📌 Executive Overview
+This repository contains an end-to-end, production-grade universal e-commerce web scraping, exact inventory extraction, and automated Google Sheets sync pipeline designed specifically for Shopify-powered storefronts.
+
+Target Brands & Live Automated Tabs:
+1. **Cava Athleisure** (`https://cavaathleisure.com`) $\rightarrow$ Tab: `Cava_Inventory` (4,652 rows)
+2. **Musclemind** (`https://musclemind.com`) $\rightarrow$ Tab: `Musclemind_Inventory` (555 rows)
+3. **Kosher Casual** (`http://koshercasual.com`) $\rightarrow$ Tab: `Koshercasual_Inventory` (5,826 rows)
+4. **Prekies** (`https://prekies.com`) $\rightarrow$ Tab: `Prekies_Inventory` (225 rows)
+5. **boAt Lifestyle** (`https://www.boat-lifestyle.com`) $\rightarrow$ Tab: `Boat-lifestyle_Inventory` (2,727 rows)
+6. **Crep Dog Crew** (`https://crepdogcrew.com`) $\rightarrow$ Tab: `Crepdogcrew_Inventory` (57,051 rows)
+
+Google Sheet URL: [https://docs.google.com/spreadsheets/d/1PLX9H5c3WA_vvM8HJQoK35ZHLBubLudHephx7T2lGjE/edit](https://docs.google.com/spreadsheets/d/1PLX9H5c3WA_vvM8HJQoK35ZHLBubLudHephx7T2lGjE/edit)
 
 ---
 
-## 📌 Executive Summary
+## 🛠️ Python Command Reference Guide
 
-This documentation details the technical design, reverse-engineering methodology, anti-bot bypass strategies, inventory delta calculation logic, and Google Sheets synchronization system built for monitoring competitor inventory and sales performance across Shopify e-commerce platforms (**Cava Athleisure** and **Musclemind**).
-
----
-
-## 🛠️ Technology Stack & Libraries
-
-| Technology / Library | Version | Purpose in Architecture |
-| :--- | :--- | :--- |
-| **Python** | `3.13` | Core execution environment & automation scripts. |
-| **Cloudscraper** | `1.2.71+` | Emulates V8 JavaScript engines and Chrome browser TLS/JA3 fingerprints to bypass Cloudflare anti-bot challenge pages. |
-| **Requests / Urllib3** | `2.31+` | Thread-safe HTTP request management & connection pooling. |
-| **Concurrent Futures** | Built-in | Multithreaded execution (`ThreadPoolExecutor`) with thread-local session isolation. |
-| **gspread** | `6.2.1` | Google Sheets API v4 client for automated spreadsheet dataset synchronization. |
-| **Google Auth** | `2.x` | Service Account OAuth2 authentication using IAM service account keys. |
-| **Pandas** | `2.x` | High-performance data manipulation, snapshot joining, and sales delta calculation. |
-| **OpenPyXL** | `3.x` | Multi-tab formatted Excel (`.xlsx`) report generation. |
-
----
-
-## 📐 System Architecture & Data Flow
-
-```mermaid
-flowchart TD
-    A[Cron Job / User Trigger] --> B[run_daily_scrape_and_sync.py]
-    
-    subgraph "Scraper Modules"
-        B --> C[cava.py]
-        B --> D[musclemind.py]
-        
-        C -->|Step 1: Catalog API| E[Shopify /products.json]
-        E -->|Step 2: Product Page Fetch| F[Cava HTML Response]
-        F -->|Step 3: Extract JS| G["window.inventories['...'][var_id]"]
-        
-        D -->|Step 1: Catalog API| H[Shopify /products.json]
-        H -->|Step 2: Product Page Fetch| I[Musclemind HTML Response]
-        I -->|Step 3: Extract JS| J["window.GloboPreorderParams...inventory_quantity"]
-    end
-    
-    G --> K[(cava_exact_inventory.csv)]
-    J --> L[(musclemind_exact_inventory.csv)]
-    
-    subgraph "Analytics & Storage"
-        K --> M[track_sales_delta.py]
-        L --> M
-        M --> N[Sales Delta & Revenue Analysis]
-        
-        K --> O[upload_to_google_sheets.py]
-        L --> O
-    end
-    
-    O -->|gspread OAuth2| P[Google Sheets: CAVA_SCRAP]
-    P --> Q[Tab: Cava_Inventory]
-    P --> R[Tab: Musclemind_Inventory]
-```
-
----
-
-## 🔬 Reverse-Engineering & Technical Extraction Logic
-
-### 1. Cava Athleisure (`cava.py`)
-
-#### Problem Statement
-Shopify's default public catalog API (`/products.json`) exposes variant metadata (title, price, SKU, size), but hides exact backend stock quantities (`inventory_quantity`). Furthermore, Cava employs Cloudflare anti-bot security that returns HTTP status `429` / `403` challenge pages (*"Verifying your connection..."*) if requests are sent too fast.
-
-#### Solution & Extraction Logic
-1. **Catalog Paginated Discovery:** Fetch `/products.json?limit=250&page=X` using `Cloudscraper` to retrieve all ~980 products (~4,652 size variants).
-2. **HTML JavaScript Extraction:** Cava's custom Shopify theme embeds exact stock numbers directly inside the HTML of product pages in a JavaScript variable:
-   ```javascript
-   window.inventories['10180314726649'][48802790670585] = {'quantity': 234, 'incoming': false};
-   ```
-3. **Cloudflare Protection Validation:** Before parsing, the script explicitly verifies the presence of `'window.inventories'` in `response.text`. If missing (indicating Cloudflare challenge interception), the thread-local Cloudscraper session is deleted and retried with exponential backoff & jitter (`2^attempt + random(0.5, 1.5)`s).
-
----
-
-### 2. Musclemind (`musclemind.py`)
-
-#### Problem Statement
-Musclemind (`musclemind.com`) uses a modern Shopify theme that does not embed `window.inventories`. Bulk cart validation probes (`POST /cart/add.js`) trigger Cloudflare IP rate-limits when probed in fast loops.
-
-#### Solution & Extraction Logic
-1. **Globo Preorder App Reverse-Engineering:** Analysis of Musclemind product page HTML revealed that Musclemind installs the **Globo Preorder Shopify App**, which injects real inventory quantities into the DOM script tag:
-   ```javascript
-   window.GloboPreorderParams.product.variants[0] = {"id":48802790670585,"title":"Classic Blue / XS"...};
-   window.GloboPreorderParams.product.variants[0].inventory_quantity = 30;
-   ```
-2. **Regex Parsing Engine:** The script uses Regex matchers to instantly extract variant IDs and corresponding `inventory_quantity` values from HTML in **~3 seconds flat**:
-   ```python
-   v_matches = re.findall(r'variants\[(\d+)\]\s*=\s*(\{.*?\});', html)
-   q_matches = re.findall(r'variants\[(\d+)\]\.inventory_quantity\s*=\s*(-?\d+);', html)
-   ```
-
----
-
-## 📈 Inventory Sales Delta & Revenue Analytics Engine (`track_sales_delta.py`)
-
-The analytics engine compares baseline inventory ($T_1$) with a subsequent inventory snapshot ($T_2$) to calculate sales performance:
-
-### Analytical Formulations
-
-1. **Stock Delta ($\Delta S$):**
-   $$\Delta S = \text{Stock}_{T1} - \text{Stock}_{T2}$$
-
-2. **Units Sold ($U_{\text{sold}}$):**
-   $$U_{\text{sold}} = \begin{cases} \Delta S & \text{if } \Delta S > 0 \\ 0 & \text{otherwise} \end{cases}$$
-
-3. **Units Restocked ($U_{\text{restocked}}$):**
-   $$U_{\text{restocked}} = \begin{cases} |\Delta S| & \text{if } \Delta S < 0 \\ 0 & \text{otherwise} \end{cases}$$
-
-4. **Estimated Revenue ($R$):**
-   $$R = U_{\text{sold}} \times \text{Price}$$
-
----
-
-## ☁️ Google Sheets API Integration (`upload_to_google_sheets.py`)
-
-### IAM & Authentication Setup
-* **Service Account Email:** `shopify-scrapper@shopifyscrap.iam.gserviceaccount.com`
-* **Authentication Method:** OAuth2 Service Account JSON credentials (`/Users/turbom/Downloads/shopifyscrap-1fdcd0018d2e.json`).
-* **Google API Scopes Used:**
-  - `https://www.googleapis.com/auth/spreadsheets` (Google Sheets API v4)
-
-### Update Strategy
-1. Connects to target Google Sheet via URL (`open_by_url`) or ID (`open_by_key`).
-2. Checks for target worksheet tabs (`Cava_Inventory`, `Musclemind_Inventory`). Creates tab if missing, or clears existing tab content (`worksheet.clear()`).
-3. Batch uploads dataframe contents (`worksheet.update(data, 'A1')`) in a single API call to maximize rate limit efficiency.
-
----
-
-## 🚀 Operations & Command Guide
-
-### Master Daily Execution (Scrape + Google Sheets Sync)
+### 1. Interactive Universal Scraper (Accepts ANY Shopify URL)
 ```bash
 cd /Users/turbom/Desktop/Alan/SHOPIFY_SCRAP
-python3 run_daily_scrape_and_sync.py --sheet "https://docs.google.com/spreadsheets/d/1PLX9H5c3WA_vvM8HJQoK35ZHLBubLudHephx7T2lGjE/edit"
+python3 universal_scraper.py
 ```
+*Prompts the user interactively to enter any Shopify store domain URL.*
 
-### Individual Scraper Commands
+---
+
+### 2. Scrape ANY Shopify Store via CLI `--url`
 ```bash
-# Cava Scraper
-python3 cava.py --sheet "https://docs.google.com/spreadsheets/d/1PLX9H5c3WA_vvM8HJQoK35ZHLBubLudHephx7T2lGjE/edit"
-
-# Musclemind Scraper
-python3 musclemind.py --sheet "https://docs.google.com/spreadsheets/d/1PLX9H5c3WA_vvM8HJQoK35ZHLBubLudHephx7T2lGjE/edit"
+python3 universal_scraper.py --url "https://any-shopify-store.com"
 ```
 
-### Daily Sales Delta Excel Generator
+---
+
+### 3. Fast Starting Batch Mode (`--limit N`)
 ```bash
-python3 track_sales_delta.py --t1 cava_inventory_day1.csv --t2 cava_exact_inventory.csv --out Cava_Sales_Report.xlsx
+# Scrape starting 50 products in 3 seconds:
+python3 universal_scraper.py --url "https://prekies.com" --limit 50
+
+# Scrape starting 100 products:
+python3 universal_scraper.py --url "https://www.boat-lifestyle.com" --limit 100
 ```
+
+---
+
+### 4. Scrape ANY Shopify Store & Sync to Google Sheets
+```bash
+python3 universal_scraper.py --url "https://musclemind.com" --sheet "https://docs.google.com/spreadsheets/d/1PLX9H5c3WA_vvM8HJQoK35ZHLBubLudHephx7T2lGjE/edit"
+```
+
+---
+
+### 5. Run Master Daily Automated Pipeline
+```bash
+python3 daily_automation_master.py
+```
+*Executes exact inventory scraping across Cava, Musclemind, and Kosher Casual, saves daily timestamped snapshots in `daily_snapshots/YYYY-MM-DD/`, calculates units sold & estimated revenue, and syncs all tabs to Google Sheets.*
+
+---
+
+## ⚙️ Architecture & Multi-Tier Exact Stock Extraction Engines
+
+`universal_scraper.py` implements a 5-tier hybrid stock extraction strategy:
+
+1. **Tier 1: Embedded Cava JS Engine (`window.inventories`)**
+   - Parses `window.inventories['product_id'][variant_id] = {'quantity': X}` embedded in theme scripts.
+2. **Tier 2: Embedded Globo Preorder Engine (`window.GloboPreorderParams`)**
+   - Parses Globo Preorder app variables `variants[i].inventory_quantity = Y`.
+3. **Tier 3: Embedded GrowWave Engine (`window.gwProductInventoryQuantity`)**
+   - Parses GrowWave app dictionary `window.gwProductInventoryQuantity[variant_id] = "Z"`.
+4. **Tier 4: Multiline Script Block JSON Engine**
+   - Scans DOM `<script>` blocks for JSON variant arrays containing `"inventory_quantity": N`.
+5. **Tier 5: Paced Cart Add Probe Engine (`/cart/add.js`)**
+   - Sends automated probes with `quantity: 999` to `/cart/add.js`. Parses status 422 error messages:
+     `{"status":422,"message":"Only X items were added to your cart due to availability."}`
+
+---
+
+## ☁️ Automated Daily Schedule (Local & GitHub Actions)
+
+- **Execution Time:** Daily at **1:55 PM IST**
+- **GitHub Actions Workflow:** `.github/workflows/daily_scraper.yml` (Runs 100% in the cloud)
+- **Local Mac Cron:** `55 13 * * * cd /Users/turbom/Desktop/Alan/SHOPIFY_SCRAP && /usr/local/bin/python3 daily_automation_master.py >> /Users/turbom/Desktop/Alan/SHOPIFY_SCRAP/daily_cron.log 2>&1`
