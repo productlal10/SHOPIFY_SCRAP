@@ -1,0 +1,16 @@
+# Credentials & Secrets
+*.json
+!daily_snapshots/**/*.json
+shopifyscrap-*.json
+credentials.json
+
+# Environment & Temp Files
+.env
+*.pyc
+__pycache__/
+.DS_Store
+*.log
+scratch/
+.venv/
+env/
+venv/

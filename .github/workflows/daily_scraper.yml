@@ -1,0 +1,41 @@
+name: Daily Shopify Exact Inventory & Sales Pipeline
+
+on:
+  schedule:
+    # Runs every day at 07:45 UTC (which is 1:15 PM IST / UTC+5:30)
+    - cron: '45 7 * * *'
+  workflow_dispatch: # Allows manual trigger anytime from GitHub Actions tab
+
+jobs:
+  scrape_and_sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Execute Daily Master Automation Pipeline
+        env:
+          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GCP_SA_KEY }}
+        run: |
+          python3 daily_automation_master.py --sheet "https://docs.google.com/spreadsheets/d/1PLX9H5c3WA_vvM8HJQoK35ZHLBubLudHephx7T2lGjE/edit"
+
+      - name: Commit & Push Updated Daily Snapshots to Repository
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add daily_snapshots/ *_exact_inventory.csv *_exact_inventory.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update daily inventory snapshots [$(date -u +'%Y-%m-%d')]" && git push)
