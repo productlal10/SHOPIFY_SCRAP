@@ -1,0 +1,209 @@
+date,store_name,product_name,size,sku,price,units_sold,units_restocked,estimated_revenue,stock_remaining_today,product_url
+2026-08-27,Cava Athleisure,Cherry Heartline Sports Bra,S,WSB3918RDS,1399.0,0,1,0.0,1,https://cavaathleisure.com/products/cherry-heartline-sports-bra
+2026-08-27,Cava Athleisure,Cherry Heartline Sports Bra,M,WSB3918RDM,1399.0,2,0,2798.0,0,https://cavaathleisure.com/products/cherry-heartline-sports-bra
+2026-08-27,Cava Athleisure,Cherry Heartline Sports Bra,XL,WSB3918RDXL,1399.0,0,1,0.0,1,https://cavaathleisure.com/products/cherry-heartline-sports-bra
+2026-08-27,Cava Athleisure,Brown Trailscape Tracks,30,MJR5410BNS,2049.0,0,1,0.0,1,https://cavaathleisure.com/products/brown-trailscape-tracks
+2026-08-27,Cava Athleisure,Brown Trailscape Tracks,32,MJR5410BNM,2049.0,1,0,2049.0,9,https://cavaathleisure.com/products/brown-trailscape-tracks
+2026-08-27,Cava Athleisure,Brown Trailscape Tracks,34,MJR5410BNL,2049.0,2,0,4098.0,38,https://cavaathleisure.com/products/brown-trailscape-tracks
+2026-08-27,Cava Athleisure,Brown Trailscape Tracks,38,MJR5410BNXXL,2049.0,0,1,0.0,44,https://cavaathleisure.com/products/brown-trailscape-tracks
+2026-08-27,Cava Athleisure,Brown Hourglass Booty Shorts,S,WSH0845BNS,1099.0,5,0,5495.0,108,https://cavaathleisure.com/products/brown-hourglass-booty-shorts
+2026-08-27,Cava Athleisure,Brown Hourglass Booty Shorts,M,WSH0845BNM,1099.0,4,0,4396.0,21,https://cavaathleisure.com/products/brown-hourglass-booty-shorts
+2026-08-27,Cava Athleisure,Brown Hourglass Booty Shorts,L,WSH0845BNL,1099.0,0,1,0.0,1,https://cavaathleisure.com/products/brown-hourglass-booty-shorts
+2026-08-27,Cava Athleisure,Brown Hourglass Booty Shorts,XL,WSH0845BNXL,1099.0,2,0,2198.0,0,https://cavaathleisure.com/products/brown-hourglass-booty-shorts
+2026-08-27,Cava Athleisure,Light Grey Trailscape Tracks,32,MJR5410GYM,2049.0,2,0,4098.0,16,https://cavaathleisure.com/products/light-grey-trailscape-tracks
+2026-08-27,Cava Athleisure,Light Grey Trailscape Tracks,34,MJR5410GYL,2049.0,1,0,2049.0,35,https://cavaathleisure.com/products/light-grey-trailscape-tracks
+2026-08-27,Cava Athleisure,Navy Trailscape Tracks,30,MJR5410NYS,2049.0,1,0,2049.0,1,https://cavaathleisure.com/products/navy-trailscape-tracks
+2026-08-27,Cava Athleisure,Navy Trailscape Tracks,34,MJR5410NYL,2049.0,1,0,2049.0,41,https://cavaathleisure.com/products/navy-trailscape-tracks
+2026-08-27,Cava Athleisure,Black Trailscape Tracks,36,MJR5410BKXL,2049.0,0,1,0.0,24,https://cavaathleisure.com/products/black-trailscape-tracks
+2026-08-27,Cava Athleisure,Black Trailscape Tracks,38,MJR5410BKXXL,2049.0,0,1,0.0,34,https://cavaathleisure.com/products/black-trailscape-tracks
+2026-08-27,Cava Athleisure,Coral Sculpt Crew Top,S,WTP0218ORS,899.0,2,0,1798.0,202,https://cavaathleisure.com/products/coral-sculpt-crew-top
+2026-08-27,Cava Athleisure,Coral Sculpt Crew Top,M,WTP0218ORM,899.0,4,0,3596.0,228,https://cavaathleisure.com/products/coral-sculpt-crew-top
+2026-08-27,Cava Athleisure,Coral Sculpt Crew Top,XL,WTP0218ORXL,899.0,0,1,0.0,66,https://cavaathleisure.com/products/coral-sculpt-crew-top
+2026-08-27,Cava Athleisure,Coral Sculpt Crew Top,XXL,WTP0218ORXXL,899.0,1,0,899.0,26,https://cavaathleisure.com/products/coral-sculpt-crew-top
+2026-08-27,Cava Athleisure,Mint Sculpt Crew Top,XS,WTP0218GRXS,899.0,1,0,899.0,55,https://cavaathleisure.com/products/mint-sculpt-crew-top
+2026-08-27,Cava Athleisure,Mint Sculpt Crew Top,M,WTP0218GRM,899.0,2,0,1798.0,164,https://cavaathleisure.com/products/mint-sculpt-crew-top
+2026-08-27,Cava Athleisure,Mint Sculpt Crew Top,L,WTP0218GRL,899.0,3,0,2697.0,66,https://cavaathleisure.com/products/mint-sculpt-crew-top
+2026-08-27,Cava Athleisure,Mint Sculpt Crew Top,XL,WTP0218GRXL,899.0,1,0,899.0,26,https://cavaathleisure.com/products/mint-sculpt-crew-top
+2026-08-27,Cava Athleisure,Mint Sculpt Crew Top,XXL,WTP0218GRXXL,899.0,0,1,0.0,11,https://cavaathleisure.com/products/mint-sculpt-crew-top
+2026-08-27,Cava Athleisure,Coral Sculpt Core Top,S,WTP0118ORS,799.0,8,0,6392.0,116,https://cavaathleisure.com/products/coral-sculpt-core-top
+2026-08-27,Cava Athleisure,Coral Sculpt Core Top,M,WTP0118ORM,799.0,8,0,6392.0,26,https://cavaathleisure.com/products/coral-sculpt-core-top
+2026-08-27,Cava Athleisure,Mint Sculpt Core Top,XS,WTP0118GRXS,799.0,3,0,2397.0,5,https://cavaathleisure.com/products/mint-sculpt-core-top
+2026-08-27,Cava Athleisure,Mint Sculpt Core Top,S,WTP0118GRS,799.0,3,0,2397.0,0,https://cavaathleisure.com/products/mint-sculpt-core-top
+2026-08-27,Cava Athleisure,Mint Sculpt Core Top,M,WTP0118GRM,799.0,1,0,799.0,0,https://cavaathleisure.com/products/mint-sculpt-core-top
+2026-08-27,Cava Athleisure,Mint Sculpt Core Top,XL,WTP0118GRXL,799.0,0,1,0.0,1,https://cavaathleisure.com/products/mint-sculpt-core-top
+2026-08-27,Cava Athleisure,Mint Sculpt Booty Shorts,S,WSH0418GRS,999.0,2,0,1998.0,246,https://cavaathleisure.com/products/mint-sculpt-booty-shorts
+2026-08-27,Cava Athleisure,Mint Sculpt Booty Shorts,M,WSH0418GRM,999.0,1,0,999.0,266,https://cavaathleisure.com/products/mint-sculpt-booty-shorts
+2026-08-27,Cava Athleisure,Mint Sculpt Booty Shorts,L,WSH0418GRL,999.0,2,0,1998.0,106,https://cavaathleisure.com/products/mint-sculpt-booty-shorts
+2026-08-27,Cava Athleisure,Mint Sculpt Booty Shorts,XL,WSH0418GRXL,999.0,1,0,999.0,54,https://cavaathleisure.com/products/mint-sculpt-booty-shorts
+2026-08-27,Cava Athleisure,Mint Sculpt Bootcut Leggings,XS,WFP0118GRXS,1299.0,0,1,0.0,60,https://cavaathleisure.com/products/mint-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Mint Sculpt Bootcut Leggings,S,WFP0118GRS,1299.0,4,0,5196.0,128,https://cavaathleisure.com/products/mint-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Mint Sculpt Bootcut Leggings,S,WFP01T18GRS,1299.0,1,0,1299.0,157,https://cavaathleisure.com/products/mint-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Mint Sculpt Bootcut Leggings,M,WFP0118GRM,1299.0,0,2,0.0,204,https://cavaathleisure.com/products/mint-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Mint Sculpt Bootcut Leggings,M,WFP01T18GRM,1299.0,2,0,2598.0,136,https://cavaathleisure.com/products/mint-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Mint Sculpt Bootcut Leggings,L,WFP0118GRL,1299.0,0,1,0.0,125,https://cavaathleisure.com/products/mint-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Mint Sculpt Bootcut Leggings,L,WFP01T18GRL,1299.0,0,1,0.0,171,https://cavaathleisure.com/products/mint-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Mint Sculpt Bootcut Leggings,XL,WFP0118GRXL,1299.0,0,3,0.0,71,https://cavaathleisure.com/products/mint-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Mint Sculpt Bootcut Leggings,XL,WFP01T18GRXL,1299.0,0,1,0.0,148,https://cavaathleisure.com/products/mint-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Mint Sculpt Bootcut Leggings,XXL,WFP0118GRXXL,1299.0,1,0,1299.0,25,https://cavaathleisure.com/products/mint-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Black Athletic Quarter-Zip,M,MTS5710BKM,1699.0,1,0,1699.0,1,https://cavaathleisure.com/products/black-athletic-quarter-zip
+2026-08-27,Cava Athleisure,Black Athletic Quarter-Zip,L,MTS5710BKL,1699.0,2,0,3398.0,0,https://cavaathleisure.com/products/black-athletic-quarter-zip
+2026-08-27,Cava Athleisure,Black Athletic Quarter-Zip,XL,MTS5710BKXL,1699.0,1,0,1699.0,13,https://cavaathleisure.com/products/black-athletic-quarter-zip
+2026-08-27,Cava Athleisure,Pink Sculpt Crew Top,M,WTP0218PNM,899.0,1,0,899.0,8,https://cavaathleisure.com/products/pink-sculpt-crew-top
+2026-08-27,Cava Athleisure,Pink Sculpt Crew Top,L,WTP0218PNL,899.0,3,0,2697.0,0,https://cavaathleisure.com/products/pink-sculpt-crew-top
+2026-08-27,Cava Athleisure,Pink Sculpt Crew Top,XL,WTP0218PNXL,899.0,0,1,0.0,1,https://cavaathleisure.com/products/pink-sculpt-crew-top
+2026-08-27,Cava Athleisure,Pink Sculpt Crew Top,XXL,WTP0218PNXXL,899.0,0,1,0.0,1,https://cavaathleisure.com/products/pink-sculpt-crew-top
+2026-08-27,Cava Athleisure,Pink Sculpt Core Top,XS,WTP0118PNXS,799.0,0,2,0.0,4,https://cavaathleisure.com/products/pink-sculpt-core-top
+2026-08-27,Cava Athleisure,Pink Sculpt Core Top,L,WTP0118PNL,799.0,1,0,799.0,0,https://cavaathleisure.com/products/pink-sculpt-core-top
+2026-08-27,Cava Athleisure,Pink Sculpt Booty Shorts,XS,WSH0418PNXS,999.0,1,0,999.0,72,https://cavaathleisure.com/products/pink-sculpt-booty-shorts
+2026-08-27,Cava Athleisure,Pink Sculpt Booty Shorts,M,WSH0418PNM,999.0,1,0,999.0,218,https://cavaathleisure.com/products/pink-sculpt-booty-shorts
+2026-08-27,Cava Athleisure,Pink Sculpt Core Leggings,XS,WLG0218PNXS,1199.0,2,0,2398.0,48,https://cavaathleisure.com/products/pink-sculpt-core-leggings
+2026-08-27,Cava Athleisure,Pink Sculpt Core Leggings,S,WLG0218PNS,1199.0,5,0,5995.0,149,https://cavaathleisure.com/products/pink-sculpt-core-leggings
+2026-08-27,Cava Athleisure,Pink Sculpt Core Leggings,M,WLG0218PNM,1199.0,4,0,4796.0,155,https://cavaathleisure.com/products/pink-sculpt-core-leggings
+2026-08-27,Cava Athleisure,Pink Sculpt Core Leggings,L,WLG0218PNL,1199.0,0,1,0.0,91,https://cavaathleisure.com/products/pink-sculpt-core-leggings
+2026-08-27,Cava Athleisure,Pink Sculpt Bootcut Leggings,XS,WFP0118PNXS,1299.0,1,0,1299.0,0,https://cavaathleisure.com/products/pink-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Pink Sculpt Bootcut Leggings,XS,WFP01T18PNS,1299.0,1,0,1299.0,29,https://cavaathleisure.com/products/pink-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Pink Sculpt Bootcut Leggings,S,WFP0118PNS,1299.0,5,0,6495.0,33,https://cavaathleisure.com/products/pink-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Pink Sculpt Bootcut Leggings,M,WFP0118PNM,1299.0,4,0,5196.0,60,https://cavaathleisure.com/products/pink-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Pink Sculpt Bootcut Leggings,M,WFP01T18PNM,1299.0,4,0,5196.0,35,https://cavaathleisure.com/products/pink-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Pink Sculpt Bootcut Leggings,L,WFP0118PNL,1299.0,3,0,3897.0,59,https://cavaathleisure.com/products/pink-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Pink Sculpt Bootcut Leggings,L,WFP01T18PNL,1299.0,3,0,3897.0,88,https://cavaathleisure.com/products/pink-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Pink Sculpt Bootcut Leggings,XL,WFP0118PNXL,1299.0,1,0,1299.0,28,https://cavaathleisure.com/products/pink-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Pink Sculpt Bootcut Leggings,XXL,WFP0118PNXXL,1299.0,0,1,0.0,8,https://cavaathleisure.com/products/pink-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Cava Next Gen Card,Default Title,Cava-Next-Gen-Card,0.0,21674,0,0.0,999,https://cavaathleisure.com/products/cava-next-gen-card
+2026-08-27,Cava Athleisure,Wine Hyper Mesh Sports Bra,XS,WSB102RDXS,1499.0,2,0,2998.0,5,https://cavaathleisure.com/products/wine-hyper-mesh-sports-bra
+2026-08-27,Cava Athleisure,Wine Hyper Mesh Sports Bra,XXL,WSB102RDXXL,1499.0,0,1,0.0,2,https://cavaathleisure.com/products/wine-hyper-mesh-sports-bra
+2026-08-27,Cava Athleisure,Cherry Next Gen Swirl Skorts,12-13Y,GSK11145RD12-13Y,1299.0,2,0,2598.0,9,https://cavaathleisure.com/products/cherry-next-gen-swirl-skorts
+2026-08-27,Cava Athleisure,Cherry Next Gen Swirl Skorts,14+Y,GSK11145RD14-Y,1299.0,34,0,44166.0,1,https://cavaathleisure.com/products/cherry-next-gen-swirl-skorts
+2026-08-27,Cava Athleisure,Pink Next Gen Swirl Skorts,14+Y,GSK11145PN14-Y,1299.0,10,0,12990.0,20,https://cavaathleisure.com/products/pink-next-gen-swirl-skorts
+2026-08-27,Cava Athleisure,Steel Blue Next Gen Swirl Skorts,14+Y,GSK11145BL14-Y,1299.0,40,0,51960.0,1,https://cavaathleisure.com/products/steel-blue-next-gen-swirl-skorts
+2026-08-27,Cava Athleisure,Pink Next Gen Active Jacket,10-11Y,GJK11245PN10-11Y,1599.0,1,0,1599.0,1,https://cavaathleisure.com/products/blush-pink-next-gen-sculptor-jacket
+2026-08-27,Cava Athleisure,Black Next Gen Swirl Skorts,14+Y,GSK11145BK14-Y,1299.0,19,0,24681.0,1,https://cavaathleisure.com/products/black-next-gen-swirl-skorts
+2026-08-27,Cava Athleisure,Ivory Next Gen Swirl Skorts,10-11Y,GSK11145WH10-11Y,1299.0,4,0,5196.0,1,https://cavaathleisure.com/products/ivory-next-gen-swirl-skorts
+2026-08-27,Cava Athleisure,Ivory Next Gen Swirl Skorts,12-13Y,GSK11145WH12-13Y,1299.0,19,0,24681.0,1,https://cavaathleisure.com/products/ivory-next-gen-swirl-skorts
+2026-08-27,Cava Athleisure,Cherry Next Gen Active Jacket,10-11Y,GJK11245RD10-11Y,1599.0,8,0,12792.0,1,https://cavaathleisure.com/products/cherry-next-gen-sculptor-jacket
+2026-08-27,Cava Athleisure,Cherry Hourglass Booty Shorts,XS,WSH0818RDXS,1099.0,1,0,1099.0,0,https://cavaathleisure.com/products/cherry-hourglass-booty-shorts
+2026-08-27,Cava Athleisure,Cherry Pleated Mini Dress,XXL,WDR4918RDXXL,2049.0,1,0,2049.0,0,https://cavaathleisure.com/products/cherry-pleated-mini-dress
+2026-08-27,Cava Athleisure,Cherry Club Corset Top,XL,WTP4818RDXL,1249.0,1,0,1249.0,0,https://cavaathleisure.com/products/cherry-club-corset-top
+2026-08-27,Cava Athleisure,Ruby Hourglass Booty Shorts,L,WSH0845RDL,1099.0,1,0,1099.0,0,https://cavaathleisure.com/products/ruby-hourglass-booty-shorts
+2026-08-27,Cava Athleisure,Cherry Hourglass Flared Leggings,S,WFPACU0118RDS,1429.0,1,0,1429.0,0,https://cavaathleisure.com/products/cherry-hourglass-flared-leggings
+2026-08-27,Cava Athleisure,Cherry Hourglass Flared Leggings,M,WFPACU0218RDM,1429.0,0,1,0.0,1,https://cavaathleisure.com/products/cherry-hourglass-flared-leggings
+2026-08-27,Cava Athleisure,Cherry Hourglass Flared Leggings,L,WFPACU0218RDL,1429.0,0,1,0.0,1,https://cavaathleisure.com/products/cherry-hourglass-flared-leggings
+2026-08-27,Cava Athleisure,Cherry Hourglass Flared Leggings,L,WFPACU0418RDL,1429.0,1,0,1429.0,0,https://cavaathleisure.com/products/cherry-hourglass-flared-leggings
+2026-08-27,Cava Athleisure,Cherry Hourglass Flared Leggings,XXL,WFPACU0218RDXXL,1429.0,0,1,0.0,1,https://cavaathleisure.com/products/cherry-hourglass-flared-leggings
+2026-08-27,Cava Athleisure,Navy Athletic Quarter-Zip,S,MTS5710NYS,1699.0,1,0,1699.0,0,https://cavaathleisure.com/products/navy-athletic-quarter-zip
+2026-08-27,Cava Athleisure,Ruby ADPT™ Wrap Top,XXL,WTP10245RDXXL,1299.0,1,0,1299.0,0,https://cavaathleisure.com/products/ruby-adpt-wrap-top
+2026-08-27,Cava Athleisure,Navy Contrast Techpique Sleeveless Polo,L,WTPCS0410NYL,1359.0,1,0,1359.0,0,https://cavaathleisure.com/products/navy-contrast-techpique-sleeveless-polo
+2026-08-27,Cava Athleisure,"Black 5"" Double Layer Rift Shorts",38,MSH5310BKXXL,1847.0,1,0,1847.0,0,https://cavaathleisure.com/products/black-5-double-layer-rift-shorts
+2026-08-27,Cava Athleisure,Black Contour Jacket,L,WJK4718BKL,2199.0,1,0,2199.0,0,https://cavaathleisure.com/products/black-contour-jacket
+2026-08-27,Cava Athleisure,Ivory Hourglass Flared Leggings,S,WFPACU0445WHS,1429.0,0,1,0.0,1,https://cavaathleisure.com/products/ivory-hourglass-flared-leggings
+2026-08-27,Cava Athleisure,Ivory Hourglass Flared Leggings,M,WFPACU0445WHM,1429.0,1,0,1429.0,0,https://cavaathleisure.com/products/ivory-hourglass-flared-leggings
+2026-08-27,Cava Athleisure,Ivory Hourglass Flared Leggings,L,WFPACU0445WHL,1429.0,1,0,1429.0,0,https://cavaathleisure.com/products/ivory-hourglass-flared-leggings
+2026-08-27,Cava Athleisure,Ivory Hourglass Flared Leggings,XL,WFPACU0445WHXL,1429.0,1,0,1429.0,0,https://cavaathleisure.com/products/ivory-hourglass-flared-leggings
+2026-08-27,Cava Athleisure,Teal Velocity Training Tee,M,MTS5518GRM,1343.0,1,0,1343.0,0,https://cavaathleisure.com/products/teal-velocity-training-tee
+2026-08-27,Cava Athleisure,Lilac Hyper Mesh Sports Bra,L,WSB021PUL,1499.0,1,0,1499.0,0,https://cavaathleisure.com/products/lilac-hyper-mesh-sports-bra
+2026-08-27,Cava Athleisure,"Shadow 5"" Pacer Shorts",30,MSH4217GY30,1596.0,1,0,1596.0,0,https://cavaathleisure.com/products/shadow-5-pacer-shorts
+2026-08-27,Cava Athleisure,"Shadow 5"" Pacer Shorts",32,MSH4217GY32,1596.0,0,1,0.0,1,https://cavaathleisure.com/products/shadow-5-pacer-shorts
+2026-08-27,Cava Athleisure,Purple Fluid Ozone Sleeveless Tank,L,MTN4314PBKL,1199.0,1,0,1199.0,0,https://cavaathleisure.com/products/purple-fluid-ozone-sleeveless-tank
+2026-08-27,Cava Athleisure,Steel Blue Hourglass Flared Leggings,S,WFPACU0145BLS,1429.0,1,0,1429.0,0,https://cavaathleisure.com/products/steel-blue-hourglass-flared-leggings
+2026-08-27,Cava Athleisure,Blush Overlap Tank,M,WTN041PNM,949.0,0,1,0.0,1,https://cavaathleisure.com/products/blush-pink-overlap-tank
+2026-08-27,Cava Athleisure,Black Hourglass Swirl Skorts,XL,WSK4114BKXL,1599.0,0,1,0.0,1,https://cavaathleisure.com/products/black-hourglass-swirl-skorts
+2026-08-27,Cava Athleisure,Pink Heartline Sports Bra,XXL,WSB3914MPNXXL,1399.0,1,0,1399.0,0,https://cavaathleisure.com/products/pink-heartline-sports-bra
+2026-08-27,Cava Athleisure,Black Ozone Sleeveless Tank,XXL,MTN4314BKXXL,1199.0,1,0,1199.0,0,https://cavaathleisure.com/products/black-ozone-sleeveless-tank
+2026-08-27,Cava Athleisure,Plum Seamless Cinched Leggings,M,WLGUD17PUM,1099.0,0,1,0.0,1,https://cavaathleisure.com/products/plum-seamless-cinched-leggings
+2026-08-27,Cava Athleisure,Plum Seamless Cinched Leggings,XXL,WLGUD17PUXXL,1099.0,1,0,1099.0,0,https://cavaathleisure.com/products/plum-seamless-cinched-leggings
+2026-08-27,Cava Athleisure,Toasted Swirl Tennis Skorts,M,WSKSET445BNM,1399.0,1,0,1399.0,0,https://cavaathleisure.com/products/toasted-swirl-tennis-skorts
+2026-08-27,Cava Athleisure,Classic Overlap Tee - Pack of 2,S,WTP1SET2NYSRS,2209.0,1,0,2209.0,0,https://cavaathleisure.com/products/classic-overlap-tee-pack-of-2
+2026-08-27,Cava Athleisure,Classic Overlap Tee - Pack of 2,M,WTP1SET2NYSRM,2209.0,0,1,0.0,1,https://cavaathleisure.com/products/classic-overlap-tee-pack-of-2
+2026-08-27,Cava Athleisure,Shadow Cotton Leisure Shorts,XL,MSH1616BKXL,799.0,1,0,799.0,0,https://cavaathleisure.com/products/shadow-cotton-leisure-shorts
+2026-08-27,Cava Athleisure,Blue Everywear Sweatshirt,L,MHD1615NYL,749.0,0,1,0.0,1,https://cavaathleisure.com/products/blue-everywear-sweatshirt
+2026-08-27,Cava Athleisure,Dusty Pink Everywear Sweatshirt,L,MHD1615BGL,749.0,1,0,749.0,0,https://cavaathleisure.com/products/dusty-pink-everywear-sweatshirt
+2026-08-27,Cava Athleisure,Brown Wide Leg Joggers,M,MJR1617BNM,1399.0,1,0,1399.0,0,https://cavaathleisure.com/products/brown-wide-leg-joggers
+2026-08-27,Cava Athleisure,Brown Wide Leg Joggers,L,MJR1617BNL,1399.0,0,1,0.0,1,https://cavaathleisure.com/products/brown-wide-leg-joggers
+2026-08-27,Cava Athleisure,Burgundy Sculpt Core Top,L,WTP901RDL,799.0,1,0,799.0,0,https://cavaathleisure.com/products/burgundy-sculpt-core-top
+2026-08-27,Cava Athleisure,Ice Blue Sculpt Core Top,M,WTP901BLM,799.0,1,0,799.0,0,https://cavaathleisure.com/products/ice-blue-sculpt-core-top
+2026-08-27,Cava Athleisure,Ice Blue Sculpt Core Top,XXL,WTP901BLXXL,799.0,1,0,799.0,0,https://cavaathleisure.com/products/ice-blue-sculpt-core-top
+2026-08-27,Cava Athleisure,White Sculpt Core Top,M,WTP901WHM,799.0,1,0,799.0,0,https://cavaathleisure.com/products/white-sculpt-core-top
+2026-08-27,Cava Athleisure,White Sculpt Core Top,XL,WTP901WHXL,799.0,1,0,799.0,0,https://cavaathleisure.com/products/white-sculpt-core-top
+2026-08-27,Cava Athleisure,Burgundy Sculpt Crew Top,XL,WTP902RDXL,899.0,1,0,899.0,0,https://cavaathleisure.com/products/burgundy-sculpt-crew-top
+2026-08-27,Cava Athleisure,Ice Blue Sculpt Crew Top,M,WTP902BLM,899.0,1,0,899.0,0,https://cavaathleisure.com/products/ice-blue-sculpt-crew-top
+2026-08-27,Cava Athleisure,Navy Petite Sculpt Bootcut Leggings,XS,WFP901NYXS,800.0,0,1,0.0,1,https://cavaathleisure.com/products/navy-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Brown Sculpt Bootcut Leggings,XS,WFP901BNXS,1299.0,1,0,1299.0,0,https://cavaathleisure.com/products/brown-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Brown Sculpt Bootcut Leggings,S,WFP901BNS,1299.0,0,1,0.0,1,https://cavaathleisure.com/products/brown-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Brown Sculpt Bootcut Leggings,L,WFP901BNL,1299.0,0,1,0.0,1,https://cavaathleisure.com/products/brown-sculpt-bootcut-leggings
+2026-08-27,Cava Athleisure,Black Sculpt V-Neck Top,L,WTP904BKL,899.0,0,1,0.0,1,https://cavaathleisure.com/products/black-sculpt-v-neck-top
+2026-08-27,Cava Athleisure,Black Sculpt Booty Shorts,S,WSH904BKS,999.0,1,0,999.0,0,https://cavaathleisure.com/products/black-sculpt-booty-shorts
+2026-08-27,Cava Athleisure,Modern Supima V Neck - Pack of 2,L,MTS102PUGRL,1949.0,1,0,1949.0,0,https://cavaathleisure.com/products/modern-supima-v-neck-pack-of-2
+2026-08-27,Cava Athleisure,Black Cotton Wrap Top,S,WTP1624BKS,714.0,1,0,714.0,0,https://cavaathleisure.com/products/black-cotton-wrap-top
+2026-08-27,Cava Athleisure,Black Cotton Wrap Top,M,WTP1624BKM,714.0,1,0,714.0,0,https://cavaathleisure.com/products/black-cotton-wrap-top
+2026-08-27,Cava Athleisure,Navy Cotton Recovery Jacket,S,WJK1636NYS,1264.0,1,0,1264.0,0,https://cavaathleisure.com/products/navy-cotton-recovery-jacket
+2026-08-27,Cava Athleisure,Toasted Aerial Leggings,XL,WLG8SET12BNXL,999.0,0,1,0.0,1,https://cavaathleisure.com/products/toasted-aerial-leggings
+2026-08-27,Cava Athleisure,Pink Aerial Crop Tank,M,WTN8SET12BPNM,999.0,1,0,999.0,0,https://cavaathleisure.com/products/pink-aerial-crop-tank
+2026-08-27,Cava Athleisure,Pink Aerial Crop Tank,L,WTN8SET12BPNL,999.0,1,0,999.0,0,https://cavaathleisure.com/products/pink-aerial-crop-tank
+2026-08-27,Cava Athleisure,Butter Yellow Plie Pleated Skort,XL,WSK14CS06YLXL,1699.0,0,1,0.0,1,https://cavaathleisure.com/products/butter-yellow-pleated-skort
+2026-08-27,Cava Athleisure,Butter Yellow Plie Pleated Skort,XXL,WSK14CS06YLXXL,1699.0,1,0,1699.0,0,https://cavaathleisure.com/products/butter-yellow-pleated-skort
+2026-08-27,Cava Athleisure,Wine High Impact Sports Bra,S,WSB1CS02WRDS,1299.0,0,1,0.0,1,https://cavaathleisure.com/products/wine-high-impact-sports-bra
+2026-08-27,Cava Athleisure,Wine High Impact Sports Bra,M,WSB1CS02WRDM,1299.0,0,1,0.0,1,https://cavaathleisure.com/products/wine-high-impact-sports-bra
+2026-08-27,Cava Athleisure,Wine High Impact Sports Bra,L,WSB1CS02WRDL,1299.0,0,1,0.0,1,https://cavaathleisure.com/products/wine-high-impact-sports-bra
+2026-08-27,Cava Athleisure,Wine High Impact Sports Bra,XL,WSB1CS02WRDXL,1299.0,0,1,0.0,1,https://cavaathleisure.com/products/wine-high-impact-sports-bra
+2026-08-27,Cava Athleisure,Wine High Impact Sports Bra,XXL,WSB1CS02WRDXXL,1299.0,0,1,0.0,1,https://cavaathleisure.com/products/wine-high-impact-sports-bra
+2026-08-27,Cava Athleisure,Pink Ultra Support Sports Bra,XS,WSB1CS01PNXS,1399.0,0,1,0.0,1,https://cavaathleisure.com/products/pink-ultra-support-sports-bra
+2026-08-27,Cava Athleisure,Pink Ultra Support Sports Bra,S,WSB1CS01PNS,1399.0,0,1,0.0,1,https://cavaathleisure.com/products/pink-ultra-support-sports-bra
+2026-08-27,Cava Athleisure,Pink Ultra Support Sports Bra,M,WSB1CS01PNM,1399.0,0,1,0.0,1,https://cavaathleisure.com/products/pink-ultra-support-sports-bra
+2026-08-27,Cava Athleisure,Pink Ultra Support Sports Bra,L,WSB1CS01PNL,1399.0,0,1,0.0,1,https://cavaathleisure.com/products/pink-ultra-support-sports-bra
+2026-08-27,Cava Athleisure,Pink Ultra Support Sports Bra,XL,WSB1CS01PNXL,1399.0,0,1,0.0,1,https://cavaathleisure.com/products/pink-ultra-support-sports-bra
+2026-08-27,Cava Athleisure,Pink Ultra Support Sports Bra,XXL,WSB1CS01PNXXL,1399.0,0,1,0.0,1,https://cavaathleisure.com/products/pink-ultra-support-sports-bra
+2026-08-27,Cava Athleisure,Pink Gingham Sculpt Core Leggings,M,WLG1402GPNM,990.0,1,0,990.0,0,https://cavaathleisure.com/products/pink-gingham-sculpt-core-leggings
+2026-08-27,Cava Athleisure,Pink Bow Sculpt Core Leggings,L,WLG1402BPNL,990.0,1,0,990.0,0,https://cavaathleisure.com/products/pink-bow-sculpt-core-leggings
+2026-08-27,Cava Athleisure,Butter Yellow Gingham Sculpt Core Leggings,M,WLG1402GYLM,990.0,1,0,990.0,0,https://cavaathleisure.com/products/butter-yellow-gingham-sculpt-core-leggings
+2026-08-27,Cava Athleisure,Blush Swirl Tennis Skorts,S,WSK14SET4PNS,1399.0,1,0,1399.0,0,https://cavaathleisure.com/products/blush-pink-swirl-tennis-skorts
+2026-08-27,Cava Athleisure,Brown Hourglass Flared Leggings,S,BTM-CAVA-ACU04-Brown-S,1429.0,0,1,0.0,1,https://cavaathleisure.com/products/brown-hourglass-flared-leggings
+2026-08-27,Cava Athleisure,Obsidian Black Hourglass Flared Leggings,XXL,BTM-CAVA-ACU04-Black-XXL,1429.0,0,1,0.0,1,https://cavaathleisure.com/products/obsidian-black-hourglass-flared-leggings
+2026-08-27,Cava Athleisure,Black Strap Back Sports Bra,XS,WSB819BKXS,1199.0,1,0,1199.0,0,https://cavaathleisure.com/products/black-strap-back-sports-bra
+2026-08-27,Cava Athleisure,Ash Supima Polo T-Shirt - Regular Fit,M,MTS16CS103NYM,1099.0,1,0,1099.0,0,https://cavaathleisure.com/products/ash-supima-polo-t-shirt
+2026-08-27,Cava Athleisure,Blue Super Stretch Brami,M,WSB9SET3BLM,1199.0,1,0,1199.0,0,https://cavaathleisure.com/products/blue-super-stretch-brami
+2026-08-27,Cava Athleisure,Cobalt Overlap Tank,S,WTN104NY2S,949.0,0,1,0.0,1,https://cavaathleisure.com/products/cobalt-overlap-tank
+2026-08-27,Cava Athleisure,Brown Hourglass Snug Leggings,L,WLG1010BNL,1299.0,0,1,0.0,1,https://cavaathleisure.com/products/brown-hourglass-snug-leggings
+2026-08-27,Cava Athleisure,Toasted Cross Back Sports Bra,S,WSB14SET1BNS,1199.0,1,0,1199.0,0,https://cavaathleisure.com/products/toasted-cross-back-sports-bra
+2026-08-27,Cava Athleisure,Toasted Cross Back Sports Bra,M,WSB14SET1BNM,1199.0,0,1,0.0,1,https://cavaathleisure.com/products/toasted-cross-back-sports-bra
+2026-08-27,Cava Athleisure,Beige Stride Cargo Pants,34,MTR1CS118BG34,1399.0,1,0,1399.0,0,https://cavaathleisure.com/products/beige-stride-cargo-pants
+2026-08-27,Cava Athleisure,"Black 5"" Train-In Shorts",32,MSH1CS119BK32,1499.0,1,0,1499.0,0,https://cavaathleisure.com/products/black-5-train-in-shorts
+2026-08-27,Cava Athleisure,White Ace Bond Polo,L,MTS1CS122WHL,1299.0,1,0,1299.0,0,https://cavaathleisure.com/products/white-ace-bond-polo
+2026-08-27,Cava Athleisure,Pink Cross Back Sports Bra,XL,WSB14SET1PUXL,1199.0,1,0,1199.0,0,https://cavaathleisure.com/products/pink-cross-back-sports-bra
+2026-08-27,Cava Athleisure,Moscow Blue Cross Back Sports Bra,S,WSB14SET1BLS,1199.0,1,0,1199.0,0,https://cavaathleisure.com/products/moscow-blue-cross-back-sports-bra
+2026-08-27,Cava Athleisure,Ruby High Impact Sports Bra,S,WSB1CS02RDS,1299.0,0,1,0.0,1,https://cavaathleisure.com/products/ruby-impact-sport-bra
+2026-08-27,Cava Athleisure,Ruby High Impact Sports Bra,M,WSB1CS02RDM,1299.0,0,1,0.0,1,https://cavaathleisure.com/products/ruby-impact-sport-bra
+2026-08-27,Cava Athleisure,Ruby High Impact Sports Bra,L,WSB1CS02RDL,1299.0,0,1,0.0,1,https://cavaathleisure.com/products/ruby-impact-sport-bra
+2026-08-27,Cava Athleisure,Ruby High Impact Sports Bra,XL,WSB1CS02RDXL,1299.0,0,1,0.0,1,https://cavaathleisure.com/products/ruby-impact-sport-bra
+2026-08-27,Cava Athleisure,Black High Impact Sports Bra,S,WSB1CS02BKS,1299.0,0,1,0.0,1,https://cavaathleisure.com/products/black-impact-sport-bra
+2026-08-27,Cava Athleisure,Black High Impact Sports Bra,L,WSB1CS02BKL,1299.0,0,1,0.0,1,https://cavaathleisure.com/products/black-impact-sport-bra
+2026-08-27,Cava Athleisure,Black High Impact Sports Bra,XL,WSB1CS02BKXL,1299.0,0,1,0.0,1,https://cavaathleisure.com/products/black-impact-sport-bra
+2026-08-27,Cava Athleisure,Black High Impact Sports Bra,XXL,WSB1CS02BKXXL,1299.0,0,1,0.0,1,https://cavaathleisure.com/products/black-impact-sport-bra
+2026-08-27,Cava Athleisure,Blush High Impact Sports Bra,XS,WSB1CS02PNXS,1299.0,1,0,1299.0,0,https://cavaathleisure.com/products/pastel-pink-impact-sport-bra
+2026-08-27,Cava Athleisure,Blush High Impact Sports Bra,S,WSB1CS02PNS,1299.0,0,1,0.0,1,https://cavaathleisure.com/products/pastel-pink-impact-sport-bra
+2026-08-27,Cava Athleisure,Blush High Impact Sports Bra,M,WSB1CS02PNM,1299.0,0,1,0.0,1,https://cavaathleisure.com/products/pastel-pink-impact-sport-bra
+2026-08-27,Cava Athleisure,Blush High Impact Sports Bra,L,WSB1CS02PNL,1299.0,1,0,1299.0,0,https://cavaathleisure.com/products/pastel-pink-impact-sport-bra
+2026-08-27,Cava Athleisure,Ruby Ultra Support Sports Bra,M,WSB1CS01RDM,1399.0,0,1,0.0,1,https://cavaathleisure.com/products/ruby-all-square-sports-bra
+2026-08-27,Cava Athleisure,Ruby Ultra Support Sports Bra,L,WSB1CS01RDL,1399.0,0,1,0.0,1,https://cavaathleisure.com/products/ruby-all-square-sports-bra
+2026-08-27,Cava Athleisure,Ruby Ultra Support Sports Bra,XL,WSB1CS01RDXL,1399.0,0,1,0.0,1,https://cavaathleisure.com/products/ruby-all-square-sports-bra
+2026-08-27,Cava Athleisure,Ruby Ultra Support Sports Bra,XXL,WSB1CS01RDXXL,1399.0,0,1,0.0,1,https://cavaathleisure.com/products/ruby-all-square-sports-bra
+2026-08-27,Cava Athleisure,Pink Plie Pleated Skort,S,WSK10CS06PNS,1699.0,1,0,1699.0,0,https://cavaathleisure.com/products/pink-pliee-pleated-skort
+2026-08-27,Cava Athleisure,Ivory Plie Pleated Skort,M,WSK10CS06WHM,1699.0,0,1,0.0,1,https://cavaathleisure.com/products/ivory-pliee-pleated-skort
+2026-08-27,Cava Athleisure,Black Everywear Joggers,L,MTR5CS111BKL,1499.0,1,0,1499.0,0,https://cavaathleisure.com/products/black-everywear-pants
+2026-08-27,Cava Athleisure,Black Supima V Neck T-shirt - Regular Fit,S,MTS5CS102BKS,749.0,1,0,749.0,0,https://cavaathleisure.com/products/black-supima-v-neck-t-shirt
+2026-08-27,Cava Athleisure,Pink Pulse Biker Shorts,M,WSH9SET1PUM,765.0,1,0,765.0,0,https://cavaathleisure.com/products/pink-pulse-biker-shorts
+2026-08-27,Cava Athleisure,Ruby Tank Us Later Top,L,TP-GEO-set3-008-YSH-Burgundy-L,1299.0,1,0,1299.0,0,https://cavaathleisure.com/products/ruby-tank-us-later-top
+2026-08-27,Cava Athleisure,Mauve Sculpt Leggings,XS,BEL511-Vamos-103-dullgrape-XS,999.0,1,0,999.0,0,https://cavaathleisure.com/products/mauve-sculpt-leggings
+2026-08-27,Cava Athleisure,Forest Zip-It-Up Top,M,TP-RON-set13-1574-Dark-forest-green-M,1494.0,1,0,1494.0,0,https://cavaathleisure.com/products/forest-zip-it-up-top
+2026-08-27,Cava Athleisure,Charcoal Zip-It-Up Top,M,TP-RON-set13-1574-Light-black-M,1494.0,1,0,1494.0,0,https://cavaathleisure.com/products/charcoal-zip-it-up-top
+2026-08-27,Cava Athleisure,Mint Seamless Sculpt Tee,L,TP-RON-set9-20230824-1-Lichen-L,600.0,1,0,600.0,0,https://cavaathleisure.com/products/mint-seamless-sculpt-tee
+2026-08-27,Cava Athleisure,Blush Overlap Tee,S,TP-RON-set2-007-RON-Sepia-Rose-S,999.0,1,0,999.0,0,https://cavaathleisure.com/products/blush-overlap-tee
+2026-08-27,Cava Athleisure,Blush Overlap Tee,M,TP-RON-set2-007-RON-Sepia-Rose-M,999.0,0,1,0.0,1,https://cavaathleisure.com/products/blush-overlap-tee
+2026-08-27,Cava Athleisure,Blush Overlap Tee,L,TP-RON-set2-007-RON-Sepia-Rose-L,999.0,0,1,0.0,1,https://cavaathleisure.com/products/blush-overlap-tee
+2026-08-27,Cava Athleisure,Black Aerial Leggings,M,BTM-RON-set12-CK1429-Black-M,999.0,1,0,999.0,0,https://cavaathleisure.com/products/black-aerial-leggings
+2026-08-27,Cava Athleisure,Brunette Sky-Rise Leggings,XL,BTM-RON-set3-RON-Sorrel-Horse-XL,1299.0,1,0,1299.0,0,https://cavaathleisure.com/products/brunette-sky-rise-leggings
+2026-08-27,Cava Athleisure,Sage Pulse Biker Shorts,XL,BTM-Reely-set1-shorts-Sadona-sage-XL,676.0,1,0,676.0,0,https://cavaathleisure.com/products/sage-pulse-biker-shorts
+2026-08-27,Cava Athleisure,Ivory Swirl Tennis Skorts,L,BTM-Reely-set4-skirt-Blanc-de-Blanc-L,1399.0,0,1,0.0,1,https://cavaathleisure.com/products/ivory-swirl-tennis-skorts
+2026-08-27,Cava Athleisure,Auburn Contoured Seamless Sports Bra,M,TP-UD-Wine red-M,999.0,1,0,999.0,0,https://cavaathleisure.com/products/auburn-contoured-seamless-sports-bra
+2026-08-27,Cava Athleisure,Auburn Contoured Seamless Sports Bra,L,TP-UD-Wine red-L,999.0,0,1,0.0,1,https://cavaathleisure.com/products/auburn-contoured-seamless-sports-bra
+2026-08-27,Musclemind,Mens Acid Wash Denim Joggers,M,8906189272110,1299.0,1,0,1299.0,39,https://musclemind.com/products/mens-acid-wash-denim-joggers-blue
+2026-08-27,Musclemind,Mens Compression Half Sleeve T-shirt,L,8906189271977,999.0,1,0,999.0,9,https://musclemind.com/products/mens-compression-half-sleeve-tshirt-black
